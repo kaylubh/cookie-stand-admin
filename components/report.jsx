@@ -1,7 +1,7 @@
-function Report() {
+function Report({ newCookieStand }) {
   return (
     <>
-      <p>report</p>
+      <p className="mx-auto p-4">{JSON.stringify(newCookieStand)}</p>
     </>
   )
 }

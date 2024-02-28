@@ -1,5 +1,7 @@
 // next.js
 import Head from "next/head";
+// react
+import { useState } from "react";
 // components
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -8,6 +10,9 @@ import Report from "@/components/report";
 
 
 export default function Home() {
+
+  const [newCookieStand, setNewCookieStand] = useState({})
+
   return (
     <>
       <Head>
@@ -16,11 +21,11 @@ export default function Home() {
 
       <Header />
 
-      <main>
+      <main className="flex flex-col gap-4 my-6">
 
-        <Form />
+        <Form onSubmit={setNewCookieStand} />
 
-        <Report />
+        <Report newCookieStand={newCookieStand} />
 
       </main>
 
