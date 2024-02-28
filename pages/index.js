@@ -16,9 +16,13 @@ export default function Home() {
 
       <Header />
 
-      <Form />
+      <main>
 
-      <Report />
+        <Form />
+
+        <Report />
+
+      </main>
 
       <Footer />
     </>
