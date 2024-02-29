@@ -6,10 +6,14 @@ import { useState } from "react";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import CreateForm from "@/components/create-form";
-import Report from "@/components/report";
+import ReportTable from "@/components/report-table";
 
 export default function Home() {
-  const [newCookieStand, setNewCookieStand] = useState({});
+  const [cookieStands, setCookieStands] = useState([]);
+
+  function handleCreate(cookieStandData) {
+    setCookieStands([...cookieStands, cookieStandData]);
+  }
 
   return (
     <div className="h-screen bg-emerald-50">
@@ -20,8 +24,8 @@ export default function Home() {
       <Header />
 
       <main className="flex flex-col gap-4 my-6">
-        <CreateForm onCreate={setNewCookieStand} />
-        <Report newCookieStand={newCookieStand} />
+        <CreateForm onCreate={handleCreate} />
+        <ReportTable cookieStandsData={cookieStands} />
       </main>
 
       <Footer />
