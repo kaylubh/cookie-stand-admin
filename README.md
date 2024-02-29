@@ -1,6 +1,6 @@
-# LAB - Class 37
+# LAB - Class 37, 38
 
-## Project: Front End with React, Next.js & TailwindCSS
+## Project: Cookie Stand Admin
 
 ### Author: [Caleb Hemphill](https://github.com/kaylubh)
 
