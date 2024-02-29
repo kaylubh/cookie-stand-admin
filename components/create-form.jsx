@@ -1,11 +1,13 @@
-function CreateForm({ onSubmit }) {
+function CreateForm({ onCreate }) {
   function handleSubmit(event) {
     event.preventDefault();
-    onSubmit({
+    onCreate({
+      id: event.target.location.value,
       location: event.target.location.value,
-      minCustomers: event.target.minCustomers.value,
-      maxCustomers: event.target.maxCustomers.value,
-      avgCookies: event.target.avgCookies.value,
+      minCustomers: parseInt(event.target.minCustomers.value),
+      maxCustomers: parseInt(event.target.maxCustomers.value),
+      avgCookies: parseFloat(event.target.avgCookies.value),
+      hourly_sales: [48, 42, 30, 24, 42, 24, 36, 42, 42, 48, 36, 42, 24, 36],
     });
     event.target.reset();
   }
@@ -30,30 +32,36 @@ function CreateForm({ onSubmit }) {
       </div>
 
       <div className="flex gap-4">
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 p-2 bg-emerald-200 rounded-md">
           <label htmlFor="minCustomers">Minimum Customers Per Hour</label>
           <input
             type="number"
-            required
             name="minCustomers"
+            required
+            min={0}
+            step={1}
             className="outline-none focus:outline-emerald-500 focus:outline-offset-0"
           />
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 p-2 bg-emerald-200 rounded-md">
           <label htmlFor="maxCustomers">Maximum Customers Per Hour</label>
           <input
             type="number"
-            required
             name="maxCustomers"
+            required
+            min={1}
+            step={1}
             className="outline-none focus:outline-emerald-500 focus:outline-offset-0"
           />
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 p-2 bg-emerald-200 rounded-md">
           <label htmlFor="avgCookies">Average Cookies Per Sale</label>
           <input
             type="number"
-            required
             name="avgCookies"
+            required
+            min={1}
+            step={.1}
             className="outline-none focus:outline-emerald-500 focus:outline-offset-0"
           />
         </div>

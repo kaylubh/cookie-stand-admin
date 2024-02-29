@@ -20,7 +20,7 @@ export default function Home() {
       <Header />
 
       <main className="flex flex-col gap-4 my-6">
-        <CreateForm onSubmit={setNewCookieStand} />
+        <CreateForm onCreate={setNewCookieStand} />
         <Report newCookieStand={newCookieStand} />
       </main>
 
