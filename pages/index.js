@@ -28,7 +28,7 @@ export default function Home() {
         <ReportTable cookieStandsData={cookieStands} />
       </main>
 
-      <Footer />
+      <Footer cookieStandsCount={cookieStands.length} />
     </div>
   );
 }
