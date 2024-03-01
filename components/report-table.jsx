@@ -1,6 +1,6 @@
 import { hours } from "@/data";
 
-function ReportTable({ cookieStandsData }) {
+function ReportTable({ cookieStandsData, onDelete }) {
   if (cookieStandsData.length === 0) {
     return (
       <h2 className="text-center text-gray-900 text-xl">
