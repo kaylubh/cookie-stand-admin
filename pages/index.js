@@ -2,12 +2,16 @@
 import Head from "next/head";
 // react
 import { useState } from "react";
+// authentication
+import { useAuth } from "@/contexts/auth";
 // components
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import LoginForm from "@/components/login-form";
 import CookieStandAdmin from "@/components/cookie-stand-admin";
 
 export default function Home() {
+  const { user, login, logout } = useAuth();
   const [standCount, setStandCount] = useState(0);
 
   return (
@@ -16,10 +20,14 @@ export default function Home() {
         <title>Cookie Stand Admin</title>
       </Head>
 
-      <Header />
+      <Header user={user} onLogout={logout} />
 
       <main className="flex flex-col gap-4 my-6">
-        <CookieStandAdmin updateStandCount={setStandCount} />
+        {user ? (
+          <CookieStandAdmin updateStandCount={setStandCount} />
+        ) : (
+          <LoginForm onLogin={login} />
+        )}
       </main>
 
       <Footer cookieStandsCount={standCount} />

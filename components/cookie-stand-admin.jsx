@@ -4,7 +4,7 @@ import { useState } from "react";
 import CreateForm from "@/components/create-form";
 import ReportTable from "@/components/report-table";
 
-export default function CookieStandAdmin({ updateStandCount }) {
+function CookieStandAdmin({ updateStandCount }) {
   const [cookieStands, setCookieStands] = useState([]);
 
   function handleCreate(cookieStandData) {
@@ -19,3 +19,5 @@ export default function CookieStandAdmin({ updateStandCount }) {
     </div>
   );
 }
+
+export default CookieStandAdmin;
