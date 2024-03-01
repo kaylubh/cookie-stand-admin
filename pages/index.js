@@ -5,16 +5,18 @@ import { useState } from "react";
 // components
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import Form from "@/components/form";
-import Report from "@/components/report";
-
+import CreateForm from "@/components/create-form";
+import ReportTable from "@/components/report-table";
 
 export default function Home() {
+  const [cookieStands, setCookieStands] = useState([]);
 
-  const [newCookieStand, setNewCookieStand] = useState({})
+  function handleCreate(cookieStandData) {
+    setCookieStands([...cookieStands, cookieStandData]);
+  }
 
   return (
-    <>
+    <div className="h-screen bg-emerald-50">
       <Head>
         <title>Cookie Stand Admin</title>
       </Head>
@@ -22,14 +24,11 @@ export default function Home() {
       <Header />
 
       <main className="flex flex-col gap-4 my-6">
-
-        <Form onSubmit={setNewCookieStand} />
-
-        <Report newCookieStand={newCookieStand} />
-
+        <CreateForm onCreate={handleCreate} />
+        <ReportTable cookieStandsData={cookieStands} />
       </main>
 
-      <Footer />
-    </>
+      <Footer cookieStandsCount={cookieStands.length} />
+    </div>
   );
 }

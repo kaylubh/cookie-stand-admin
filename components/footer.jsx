@@ -1,9 +1,9 @@
-function Footer() {
+function Footer({ cookieStandsCount }) {
   return (
-    <footer className="p-4 bg-green-500 text-gray-700 font-semibold">
-      <p>&copy;{new Date().getFullYear()}</p>
+    <footer className="fixed bottom-0 left-0 right-0 p-4 bg-emerald-500 text-gray-900 text-lg font-semibold">
+      <p>{cookieStandsCount} Locations World Wide</p>
     </footer>
-  )
+  );
 }
 
 export default Footer;
