@@ -1,4 +1,4 @@
-# LAB - Class 37, 38
+# LAB - Class 37-39
 
 ## Project: Cookie Stand Admin
 
