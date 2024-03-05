@@ -1,4 +1,4 @@
-# LAB - Class 37-39
+# LAB - Class 37-41
 
 ## Project: Cookie Stand Admin
 
@@ -8,14 +8,13 @@
 
 #### Requirements
 
-1. Clone repo
-1. `npm install`
+A modern browser
 
-#### Run
+### Run
 
-1. From root of project directory run `npm run dev`
-1. Navigate to the link provided on run: `http://localhost:3000`
+1. Navigate to [https://cookie-stand-admin-kaylub.vercel.app/](https://cookie-stand-admin-kaylub.vercel.app/)
+1. Login with the username and password (admin, admin)
 
-#### Tests
+### Tests
 
 No tests
